@@ -191,8 +191,15 @@ If you want to use a private repository, you can add it to your `pyproject.toml`
 
 ```toml
 [[tool.poetry.source]]
-name = 'private'
-url = 'http://example.com/simple'
+name = "private"
+url = "http://example.com/simple"
+```
+
+If you have multiple repositories configured, you can explicitly tell poetry where to look for a specific package:
+
+```toml
+[tool.poetry.dependencies]
+requests = { version = "^2.13.0", source = "private" }
 ```
 
 !!!note
