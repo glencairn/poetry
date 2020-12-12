@@ -85,7 +85,7 @@ poetry init
 * `--python` Compatible Python versions.
 * `--dependency`: Package to require with a version constraint. Should be in format `foo:1.0.0`.
 * `--dev-dependency`: Development requirements, see `--require`.
-
+* `--license (-l)`: License of the package.
 
 ## install
 
@@ -146,7 +146,9 @@ poetry install --no-root
 
 * `--no-dev`: Do not install dev dependencies.
 * `--no-root`: Do not install the root package (your project).
-* `--extras (-E)`: Features to install (multiple values allowed).
+* `--dry-run`: Output the operations but do not execute anything (implicitly enables --verbose).
+* `--remove-untracked`: Removes packages not present in the lock file.
+* `--extras (-E)`: Extra sets of dependencies to install. (multiple values allowed)
 
 ## update
 
@@ -172,9 +174,9 @@ update the constraint, for example `^2.3`. You can do this using the `add` comma
 
 ### Options
 
-* `--dry-run` : Outputs the operations but will not execute anything (implicitly enables --verbose).
-* `--no-dev` : Do not install dev dependencies.
-* `--lock` : Do not perform install (only update the lockfile).
+* `--no-dev` : Do not update the development dependencies.
+* `--dry-run` : Output the operations but do not execute anything (implicitly enables --verbose).
+* `--lock` : Do not perform operations (only update the lockfile).
 
 ## add
 
@@ -260,7 +262,6 @@ poetry add "git+https://github.com/pallets/flask.git@1.1.1[dotenv,dev]"
 * `--dry-run` : Outputs the operations but will not execute anything (implicitly enables --verbose).
 * `--lock` : Do not perform install (only update the lockfile).
 
-
 ## remove
 
 The `remove` command removes a package from the current
@@ -273,8 +274,7 @@ poetry remove pendulum
 ### Options
 
 * `--dev (-D)`: Removes a package from the development dependencies.
-* `--dry-run` : Outputs the operations but will not execute anything (implicitly enables --verbose).
-
+* `--dry-run`: Output the operations but do not execute anything (implicitly enables --verbose).
 
 ## show
 
